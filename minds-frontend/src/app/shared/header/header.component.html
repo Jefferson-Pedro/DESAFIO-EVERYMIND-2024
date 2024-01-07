@@ -1,16 +1,21 @@
 <mat-toolbar *ngIf="showMenu" class="toolbar">
   <div class="container">
-    <div class="menu-logo-icon">
-      <button
-        mat-icon-button
-        class="button-menu"
-        (click)="navService.toggleMenu()"
-      >
-        <mat-icon class="color-secondary">menu</mat-icon>
+
+    <div class="menu-logo">
+      <button mat-icon-button class="button-menu" (click)="navService.toggleMenu()">
+        <mat-icon>menu</mat-icon>
       </button>
       <div class="logo">
         <img class="logo" src="assets/logo-everymind2.jpg" alt="logo" />
       </div>
     </div>
+
+    <div class="social-icons">
+      <a href="mailto:jeffersonpedro05@gmail.com"><i class="fa-brands fa-google-plus"></i></a>
+      <a href="https://www.linkedin.com/in/jefferson-pedro-desenv/" target="_blank"><i
+          class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/Jefferson-Pedro" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+    </div>
+    
   </div>
 </mat-toolbar>

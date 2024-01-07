@@ -1,1 +1,93 @@
-<p>list-product works!</p>
+<div class="container">
+    <mat-card class="card-container">
+      <div class="d-flex justify-content-between">
+        <mat-toolbar>
+          <div>PRODUTOS</div>
+          <button 
+          mat-button 
+          class="add-button"
+          aria-label="Criar uma empresa"  
+          (click)="onCreateProduct()">Criar Produto
+          </button>
+        </mat-toolbar>
+      </div>
+  
+      <div *ngIf="product; else loading" class="mat-elevation-z8"> 
+        <mat-table [dataSource]="product">
+
+          <!--Id Column -->
+          <ng-container matColumnDef="codProd">
+            <mat-header-cell *matHeaderCellDef>Nº</mat-header-cell>
+            <mat-cell *matCellDef="let product">
+              {{ product.codProd }}</mat-cell>
+          </ng-container>
+  
+          <!-- Name Column -->
+          <ng-container matColumnDef="nomeProd">
+            <mat-header-cell *matHeaderCellDef>Nome do Produto</mat-header-cell>
+            <mat-cell *matCellDef="let product">{{ product.nomeProd }}</mat-cell>
+          </ng-container>
+  
+          <!-- Description Column -->
+          <ng-container matColumnDef="descricaoProd">
+            <mat-header-cell *matHeaderCellDef>Descrição</mat-header-cell>
+            <mat-cell *matCellDef="let product">{{ product.descricaoProd }}</mat-cell>
+          </ng-container>
+
+          <!-- Price Column -->
+          <ng-container matColumnDef="precoProd">
+            <mat-header-cell *matHeaderCellDef>Preço</mat-header-cell>
+            <mat-cell *matCellDef="let product">{{ product.precoProd }}</mat-cell>
+          </ng-container>
+  
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef class="action-button">
+              Ações
+            </mat-header-cell>
+  
+            <mat-cell *matCellDef="let product" class="action-button">
+  
+             <button mat-icon-button [matMenuTriggerFor]="beforeMenu" aria-label="Menu de ações">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+  
+                <mat-menu #beforeMenu="matMenu">
+  
+                  <button mat-menu-item (click)="onEdit(product)">
+                    <mat-icon color="primary">edit</mat-icon>
+                    Editar
+                  </button>
+  
+                  <button mat-menu-item (click)="onDelete(product.idproduct)">
+                    <mat-icon class="text-danger">delete</mat-icon>
+                    Excluir
+                  </button>
+                </mat-menu>
+            </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+  
+        <!-- <div class="paginator">
+            <mat-paginator #paginator
+                 (page)="handlePageEvent($event)"
+                 [length]="length"
+                 [pageSize]="pageSize"
+                 [pageIndex]="pageIndex"
+                 [showFirstLastButtons]="true"
+                 [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+                
+                 aria-label="Select page"> 
+            </mat-paginator>
+  
+        </div> -->
+      </div>
+      <ng-template #loading>
+        <div class="loading-spinner">
+          <app-loader></app-loader>
+        </div>
+      </ng-template>
+    </mat-card>
+  </div>

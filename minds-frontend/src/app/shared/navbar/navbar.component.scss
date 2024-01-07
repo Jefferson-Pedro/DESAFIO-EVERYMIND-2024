@@ -20,9 +20,10 @@
   }
   
   span {
-    // color:  #1CA385;
+    display: flex;
+    align-items: center;
     color: #f0f0f0;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
   } 
 
   .sidenav i {
@@ -30,14 +31,16 @@
   }
 
   .nav-list {
-    margin-top: 15px;
+    margin-top: 20px;
   }
   
   .nav-list a {
+    display: flex;
+    align-items: center;
     padding-bottom: 25px;
   }
-  
-  .mat-list-item:hover {
+
+  mat-list-item:hover {
     background-color: #1CA385; /* Cor de destaque ao passar o mouse */
     color: #fff; /* Cor do texto ao passar o mouse */
   }

@@ -1,0 +1,11 @@
+.img-container {
+    text-align: center; /* centralizar horizontalmente */
+  }
+  
+  .img-container img {
+    width: 50%; /* ajuste o valor conforme necessário */
+    height: auto; /* mantém a proporção original da imagem */
+    display: block; /* remove espaços extras abaixo da imagem */
+    margin: 0 auto; /* centralizar horizontalmente usando margin */
+  }
+  

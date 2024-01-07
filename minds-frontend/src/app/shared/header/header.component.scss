@@ -2,10 +2,10 @@
     display: flex;
     height: 65px; /*Estou definindo a altura do meu toolbar*/
     background: #343541;
+    // justify-content: space-around;
   }
   .container{
     display: flex;
-    justify-content: space-between;
     padding-left: 0;
     margin-left: -10px;
   }
@@ -15,7 +15,7 @@
     max-height: 50px;
     margin: 5px;
   }
-  .menu-logo-icon, .icon-navigate{
+  .menu-logo{
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -28,10 +28,16 @@
     overflow: unset;
     color: #1CA385 !important;
   }
-  
-  
-  @media (max-width: 320px) {
-    .icon-navigate {
-      display: none;
-    }
+
+  .social-icons{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
   }
+
+  .social-icons a {
+    margin-right: 15px; /* Ajuste a margem conforme necessário para obter o espaçamento desejado */
+    text-decoration: none; /* Remova a decoração do texto para os links */
+    color: #f0f0f0; /* Cor dos ícones */
+    font-size: 1.8rem;
+}
