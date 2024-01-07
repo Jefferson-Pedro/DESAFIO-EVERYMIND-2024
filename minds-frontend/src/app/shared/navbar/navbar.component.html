@@ -1,0 +1,31 @@
+<mat-sidenav-container style="position: relative">
+    <mat-sidenav
+      class="sidenav"
+      mainColors
+      mode="side"
+      [opened]="navService.isMenuOpen()" 
+      fixedInViewport="false"
+      fixedTopGap="58"
+    >
+      <mat-nav-list class="nav-list">
+        <a mat-list-item routerLink="core/about">
+          <span>
+            <i class="material-icons v-middle"> local_mall </i>
+            Produtos
+          </span>
+        </a>
+        <a mat-list-item routerLink="login">
+          <span>
+            <i class="material-icons v-middle"> logout </i>
+            Sair
+          </span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <div class="main-container">
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </mat-sidenav-container>

@@ -1,21 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-
-
+import { CoreRoutingModule } from './core-routing.module';
+import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    CarouselComponent
+    PageNotfoundComponent
   ],
   imports: [
+    CoreRoutingModule,
     CommonModule
-  ]
+  ],
+  exports:[]
 })
 export class CoreModule { }

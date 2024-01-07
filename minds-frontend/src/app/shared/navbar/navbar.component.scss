@@ -1,0 +1,45 @@
+.sidenav {
+    background: #343541;
+    width: 160px;
+    border: 1px solid rgb(64, 64, 64);
+  }
+  
+  mat-sidenav-container,
+  .main-container {
+    height: calc(100vh - 65px);
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+  }
+  
+  span {
+    // color:  #1CA385;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+  } 
+
+  .sidenav i {
+    padding-right: 10px;
+  }
+
+  .nav-list {
+    margin-top: 15px;
+  }
+  
+  .nav-list a {
+    padding-bottom: 25px;
+  }
+  
+  .mat-list-item:hover {
+    background-color: #1CA385; /* Cor de destaque ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+  }
+  
+  

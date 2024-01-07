@@ -1,0 +1,20 @@
+.footer {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 80px; /*Estou definindo a altura do meu footer*/
+    color:  #f0f0f0;
+    background: #343541;
+}
+.social-icons a {
+    margin-right: 15px; /* Ajuste a margem conforme necessário para obter o espaçamento desejado */
+    margin-bottom: 30px;
+    text-decoration: none; /* Remova a decoração do texto para os links */
+    color: #f0f0f0; /* Cor dos ícones */
+    font-size: 1.8rem;
+}
+.text-footer{
+    font-weight: 50px;
+    font-size: 0.8rem;
+}
