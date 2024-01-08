@@ -17,6 +17,7 @@ import { ListProductComponent } from './components/list-product/list-product.com
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CoreModule } from 'src/app/core/core.module';
+import { ProductRoutingModule } from './product-routing.module';
 ;
 
 
@@ -27,6 +28,7 @@ import { CoreModule } from 'src/app/core/core.module';
     ListProductComponent
   ],
   imports: [
+    ProductRoutingModule,
     HttpClientModule,
     CoreModule,
     CommonModule,

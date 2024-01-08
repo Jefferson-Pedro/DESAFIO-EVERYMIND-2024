@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { LoginModule } from './features/login';
-import { ProductsModule } from './features/products/products.module';
 import { SharedModule } from './shared/shared.module';
+import { ProductsModule } from './features/products/products.module';
+import { ProductRoutingModule } from './features/products/product-routing.module';
 
 
 
@@ -21,6 +22,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ProductRoutingModule,
     CoreModule,
     LoginModule,
     ProductsModule,

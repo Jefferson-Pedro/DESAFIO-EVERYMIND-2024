@@ -31,11 +31,15 @@ export class ProductService {
   }
 
   public update(product: Product): Observable<Product>{
-    const url = `${this.baseUrl}/produto/edit${product.codProd}`;
+    const url = `${this.baseUrl}/produto/edit/${product.codProd}`;
 
     return this.http.put<Product>(url, product);
   }
 
-  public delete(){}
+  public delete(id: Number){
+    const url = `${environment.baseUrl}/produto/${id}`;
+
+    return this.http.delete(url);
+  }
 
 }
