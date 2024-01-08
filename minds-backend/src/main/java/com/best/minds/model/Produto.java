@@ -23,7 +23,7 @@ public class Produto {
 	private String descricaoProd;
 	
 	@Column(name = "preco_prod")
-	private Double precoPro;
+	private Double precoProd;
 	
 	//GETS E SETS
 
@@ -51,11 +51,11 @@ public class Produto {
 		this.descricaoProd = descricaoProd;
 	}
 
-	public Double getPrecoPro() {
-		return precoPro;
+	public Double getPrecoProd() {
+		return precoProd;
 	}
 
-	public void setPrecoPro(Double precoPro) {
-		this.precoPro = precoPro;
+	public void setPrecoPro(Double precoProd) {
+		this.precoProd = precoProd;
 	}	
 }

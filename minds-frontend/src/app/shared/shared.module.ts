@@ -6,11 +6,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import { SharedRoutingModule } from './shared-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { FooterComponent } from './footer/footer.component';
     MatSidenavModule,
     MatDividerModule,
     MatListModule,
+    MatSnackBarModule
 
   ],
   exports:[

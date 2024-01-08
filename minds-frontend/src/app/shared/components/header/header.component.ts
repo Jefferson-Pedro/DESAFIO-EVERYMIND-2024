@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { NavService } from '../service';
+import { NavService } from '../../service/nav-service';
 
 @Component({
   selector: 'app-header',
