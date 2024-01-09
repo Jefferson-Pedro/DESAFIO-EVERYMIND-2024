@@ -1,10 +1,9 @@
 <div class="container">
-    <mat-card class="card-container">
+    <mat-card class="card-container mat-elevation-z8">
       <mat-card-header>
         <div class="image-logo">
           <img src="assets/logo-everymind2.jpg" alt="Logo" />
         </div>
-        <!-- <mat-card-title>NutriNotes</mat-card-title> -->
       </mat-card-header>
       <mat-card-content>
     
@@ -25,13 +24,14 @@
                 type="password" 
                 formControlName="senha"/>
               </mat-form-field>
-              <button mat-raised-button mainColors (click)="login()">Login</button>
+              <button mat-raised-button class="default-button" 
+              (click)="login()">Login</button>
             </div>
           </mat-tab>
-          </form>
+          </form> 
   
-  
-          <mat-tab label="Cadastro" class="card-register">
+                                <!--SEGUNDO ABA-->
+         <mat-tab label="Cadastro" class="card-register">
             <div class="formAccount">
               <mat-stepper orientation="vertical" #stepper>
                 <mat-step [stepControl]="firstFormGroup">
@@ -103,5 +103,5 @@
           </mat-tab>
         </mat-tab-group>
       </mat-card-content>
-    </mat-card>
+    </mat-card> 
   </div>

@@ -27,3 +27,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: $green !important;
     color: $white-smoke !important;
   }
+
+  .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label{
+    color: $white-smoke !important;
+  }
+
+  .mat-mdc-tab .mdc-tab__text-label{
+    color: $white-smoke !important;
+  }
