@@ -13,11 +13,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { FormRegisterComponent } from './components/form-register/form-register.component';
 
 
 @NgModule({
   declarations: [
-    FormLoginComponent
+    FormLoginComponent,
+    FormRegisterComponent
   ],
   imports: [
     CommonModule,

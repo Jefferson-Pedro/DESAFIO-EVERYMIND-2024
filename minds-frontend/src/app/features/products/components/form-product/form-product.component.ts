@@ -19,15 +19,14 @@ export class FormProductComponent {
   private product!: Product;
   //protected title: String = 'Cadastrar um novo ';
 
-  constructor(@Inject(MAT_DIALOG_DATA) private productData: any) {
-    if (productData) {
-      if (productData.action === 'edit') {
-        // Preencha os campos do formulário com os dados do produto se a ação for 'edit'
-        this.fillForm(productData.product);
-        this.product = productData.product;
-      }
+  constructor(@Inject(MAT_DIALOG_DATA) private productData: Product) {
+    console.log('Confirmando o obj enviado: ', productData);
+    if (productData != null) {
+        this.product = productData;
+        this.fillForm(this.product);
+        
     } else {
-      console.log('productData é null');
+        console.log('Criação de novo produto');
     }
   }
   
@@ -41,17 +40,19 @@ export class FormProductComponent {
   }
 
   private createOrUpdateProductPayLoad(): Product{
-    const formValue = this.form.getRawValue();
+    const form = this.form.value;
+    console.log('Formulario cru',form)
     return{
-      codProd: this.product?.codProd,
-      nomeProd: formValue.nomeProd,
-      descricaoProd: formValue.descricaoProd,
-      precoProd:Number(formValue.precoProd)
+      codProd:form.codProd,
+      nomeProd: form.nomeProd,
+      descricaoProd: form.descricaoProd,
+      precoProd: form.precoProd
     };
   }
 
   private createProduct(): void{
     const body = this.createOrUpdateProductPayLoad();
+    console.log('Body', body);
     this.prodService.create(body).subscribe({
       next:(res) => {
         this.notificationService.showMessageSucess('Produto salvo com sucesso!');
@@ -83,6 +84,7 @@ export class FormProductComponent {
 
     this.prodService.update(body).subscribe({
       next: () => {
+        console.log(body);
         this.notificationService.showMessageSucess(
           'Produto atualizado com sucesso!'
         );
@@ -100,19 +102,20 @@ export class FormProductComponent {
   }
 
   public onSubmit(): void{
+
     console.log(this.form.value);
+
     if (this.form.invalid) {
       this.notificationService.showMessageFail(
         'Preencha todos os campos corretamente!'
       );
-      return; //Quebra a função e não executa mais nada.
+      return; 
     }
-    
-    if (this.product && this.product.codProd) {
-      // Se o codProd está preenchido, significa que estamos editando um produto existente
+    if (this.product != null) {
       this.editProduct();
+      return;
+
     } else {
-      // Se o codProd está vazio, significa que estamos criando um novo produto
       this.createProduct();
     }
   }

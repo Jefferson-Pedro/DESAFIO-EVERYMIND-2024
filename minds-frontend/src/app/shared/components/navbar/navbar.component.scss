@@ -36,13 +36,12 @@
   
   .nav-list a {
     display: flex;
-    align-items: center;
-    padding-bottom: 25px;
+
+    &:hover{
+      background-color: #1CA385; /* Cor de destaque ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    }
   }
 
-  mat-list-item:hover {
-    background-color: #1CA385; /* Cor de destaque ao passar o mouse */
-    color: #fff; /* Cor do texto ao passar o mouse */
-  }
   
   

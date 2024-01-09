@@ -4,6 +4,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     LoaderComponent
   ],
   imports: [
+    MatButtonModule,
     CoreRoutingModule,
     CommonModule,
     MatProgressSpinnerModule

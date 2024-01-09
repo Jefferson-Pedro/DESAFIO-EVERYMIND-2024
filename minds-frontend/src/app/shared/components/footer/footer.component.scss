@@ -1,3 +1,4 @@
+@import 'src/styles/variables.scss';
 .footer {
     bottom: 0;
     display: flex;
@@ -5,9 +6,10 @@
     flex-direction: column;
     height: 45px; /*Estou definindo a altura do meu footer*/
     color:  #f0f0f0;
-    background: #343541;
-}
-.text-footer{
-    font-weight: 50px;
-    font-size: 0.9rem;
+    background: $default-grey;
+
+    > small {
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
 }

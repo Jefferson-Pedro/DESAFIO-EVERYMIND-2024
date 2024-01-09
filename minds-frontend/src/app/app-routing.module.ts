@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsModule } from './features/products/products.module';
+import { LoginModule } from './features/login';
 import { PageNotfoundComponent } from './core/components/page-notfound/page-notfound.component';
-import { FormLoginComponent } from './features/login/components/form-login';
-//import { ListProductComponent } from './features/products/components/list-product/list-product.component';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirecionamento para '/home' quando o caminho estiver vazio
-
-  {path: 'login', component: FormLoginComponent},
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' }, // Redirecionamento para '/home' quando o caminho estiver vazio
 
   {path: 'produtos', loadChildren: () =>
     import('./features/products/products.module').then(
       (module) => module.ProductsModule)},
 
+  {path: 'auth', loadChildren: () =>
+    import('./features/login').then(
+      (module) => module.LoginModule)},
+
   {path: '**', component: PageNotfoundComponent}
 
-  //{path: 'home', component: HomeComponent},
 ];
 
 @NgModule({

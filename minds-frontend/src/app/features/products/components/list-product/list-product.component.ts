@@ -32,7 +32,7 @@ export class ListProductComponent {
   disabled = false;
 
   public constructor(){
-    this.onListProduct();
+    this.onListProduct(); 
   }
 
   public onListProduct(){
@@ -52,13 +52,11 @@ export class ListProductComponent {
   }
 
   protected onEdit(product: Product){
-    console.log(product);
     const dialogRef = this.dialog.open(FormProductComponent, {
-      data: { action: 'edit', product },
+      data: product,
     });
   }
   protected onDelete(product: Product){
-    console.log(product.codProd);
     this.prodService.delete(product.codProd).subscribe({
       next: () => {
         this.notificationService.showMessageSucess('Sucesso! Produto excluído');

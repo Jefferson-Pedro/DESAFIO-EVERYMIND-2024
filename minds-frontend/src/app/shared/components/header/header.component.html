@@ -1,13 +1,17 @@
 <mat-toolbar *ngIf="showMenu" class="toolbar">
-  <div class="container">
+  <div class="wrapper">
 
-    <div class="menu-logo">
-      <button mat-icon-button class="button-menu" (click)="navService.toggleMenu()">
-        <mat-icon>menu</mat-icon>
-      </button>
+    <div class="logo-menu">
       <div class="logo">
         <img class="logo" src="assets/logo-everymind2.jpg" alt="logo" />
       </div>
+      
+      <div class="menu">
+        <button mat-icon-button class="button-menu" (click)="navService.toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
     </div>
 
     <div class="social-icons">
