@@ -6,7 +6,7 @@ import { PageNotfoundComponent } from './core/components/page-notfound/page-notf
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' }, // Redirecionamento para '/home' quando o caminho estiver vazio
+  { path: '', redirectTo: 'auth/entrar', pathMatch: 'full' }, // Redirecionamento para '/home' quando o caminho estiver vazio
 
   {path: 'produtos', loadChildren: () =>
     import('./features/products/products.module').then(

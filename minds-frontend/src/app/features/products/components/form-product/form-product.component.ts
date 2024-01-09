@@ -84,13 +84,13 @@ export class FormProductComponent {
 
     this.prodService.update(body).subscribe({
       next: () => {
-        console.log(body);
+        console.log('o body:', body);
         this.notificationService.showMessageSucess(
           'Produto atualizado com sucesso!'
         );
-        setTimeout(() => {
-          window.location.reload(); // Recarregue a página após 2 segundos
-        }, 2000);
+        // setTimeout(() => {
+        //   window.location.reload(); // Recarregue a página após 2 segundos
+        // }, 2000);
       },
       error: () => {
         this.notificationService.showMessageFail(

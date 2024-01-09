@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-notfound',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-notfound.component.scss']
 })
 export class PageNotfoundComponent {
+  private router = inject(Router);
 
+  public constructor(){}
+
+  public navigateProduct(): void{
+    this.router.navigate(['produtos/lista-de-produtos']);
+  }
 }

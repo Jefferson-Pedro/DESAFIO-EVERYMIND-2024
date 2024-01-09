@@ -5,7 +5,9 @@ import { FormRegisterComponent } from './components/form-register';
 
 const routes: Routes = [
 
-  {path: 'login', component: FormLoginComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'entrar' },
+
+  {path: 'entrar', component: FormLoginComponent},
   
   {path: 'cadastro-usuario', component: FormRegisterComponent}
 ];

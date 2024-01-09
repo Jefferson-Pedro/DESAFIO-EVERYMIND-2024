@@ -43,12 +43,15 @@ import { ProductRoutingModule } from './product-routing.module';
     MatDialogModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    
   ],
   exports: [
     FormProductComponent,
     ListProductComponent
   ],
-  providers:[]
+  providers:[
+    
+  ]
 })
 export class ProductsModule { }

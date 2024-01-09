@@ -35,3 +35,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .mat-mdc-tab .mdc-tab__text-label{
     color: $white-smoke !important;
   }
+
+  .mat-mdc-button.mat-mdc-button-base, .mat-mdc-raised-button, .mat-mdc-unelevated-button, .mat-mdc-outlined-button{
+    background-color: $green !important;
+  }
+
+  .mat-mdc-button .mdc-button__label, .mat-mdc-unelevated-button, .mat-mdc-raised-button, .mat-mdc-outlined-button{
+    color: $white-smoke !important;
+  }

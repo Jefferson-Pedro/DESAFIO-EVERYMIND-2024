@@ -55,7 +55,8 @@ public class Produto {
 		return precoProd;
 	}
 
-	public void setPrecoPro(Double precoProd) {
+	public void setPrecoProd(Double precoProd) {
 		this.precoProd = precoProd;
-	}	
+	}
+
 }
