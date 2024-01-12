@@ -5,6 +5,7 @@ import { LoginModule } from './features/login';
 import { PageNotfoundComponent } from './core/components/page-notfound/page-notfound.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'auth/entrar', pathMatch: 'full' }, // Redirecionamento para '/home' quando o caminho estiver vazio
 
@@ -16,7 +17,7 @@ const routes: Routes = [
     import('./features/login').then(
       (module) => module.LoginModule)},
 
-  {path: '**', component: PageNotfoundComponent}
+  {path: '**', component: PageNotfoundComponent,}
 
 ];
 

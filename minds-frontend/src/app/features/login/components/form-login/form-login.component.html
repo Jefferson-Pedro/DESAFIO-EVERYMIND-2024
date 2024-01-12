@@ -8,14 +8,14 @@
 
           <form [formGroup]="formLogin" class="form p-3">
            
-                <mat-form-field class="w-100">
+                <mat-form-field appearance="outline" class="w-100">
                   <mat-label>Email</mat-label>
                   <input matInput placeholder="email@exemple.com" 
                   type="email"
                   formControlName="login" />
                 </mat-form-field>
     
-                <mat-form-field class="w-100">
+                <mat-form-field appearance="outline" class="w-100">
                   <mat-label>Senha</mat-label>
                   <input matInput placeholder="Senha" 
                   type="password" 
@@ -23,7 +23,7 @@
                 </mat-form-field>
 
                   <button mat-raised-button class="default-button w-100 mb-3"
-                  (click)="login()">Login</button>
+                  (click)="onSubmit()">Login</button>
 
                 <small>Não tem cadastro? <a routerLink="/auth/cadastro-usuario">Clique aqui</a></small>
 

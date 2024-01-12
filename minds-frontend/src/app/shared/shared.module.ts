@@ -13,13 +13,15 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ShowHideDirective } from './directives/show-hide.directive';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ShowHideDirective
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
+    ShowHideDirective
   ]
 })
 export class SharedModule { }

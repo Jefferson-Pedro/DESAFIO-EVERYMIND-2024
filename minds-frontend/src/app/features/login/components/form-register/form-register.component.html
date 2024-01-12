@@ -1,1 +1,33 @@
-<p>form-register works!</p>
+<div class="container">
+    <mat-card class="card-container mat-elevation-z6">
+      <mat-card-header>
+          <img src="assets/logo-everymind-520.png" alt="Logo"  width="170"/>
+      </mat-card-header>
+
+      <div class="title-login"> 
+        <mat-label>Faça o seu Cadastro</mat-label>
+    </div>
+
+          <form [formGroup]="formLogin" class="form p-3">
+           
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="email@exemple.com" 
+                  type="email"
+                  formControlName="login" />
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Senha</mat-label>
+                  <input matInput placeholder="Senha" 
+                  type="password" 
+                  formControlName="senha"/>
+                </mat-form-field>
+
+                  <button mat-raised-button class="default-button w-100 mb-3"
+                  (click)="onSubmit()">Criar</button>
+
+          </form> 
+
+    </mat-card> 
+  </div>

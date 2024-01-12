@@ -10,6 +10,8 @@ import { LoginModule } from './features/login';
 import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './features/products/products.module';
 import { ProductRoutingModule } from './features/products/product-routing.module';
+import { LoginService } from './features/login/services';
+import { ShowHideDirective } from './shared/directives/show-hide.directive';
 
 
 
@@ -29,7 +31,7 @@ import { ProductRoutingModule } from './features/products/product-routing.module
     SharedModule
 
   ],
-  providers: [{ provide: Location, useClass: Location },],
+  providers: [{ provide: Location, useClass: Location }, LoginService, ShowHideDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
