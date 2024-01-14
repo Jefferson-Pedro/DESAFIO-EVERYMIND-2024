@@ -16,5 +16,5 @@ insert into produto (nome_prod, desc_prod, preco_prod) values ('Sofá Cama 3 Lug
 
 insert into produto (nome_prod, desc_prod, preco_prod) values ('Máquina de Lavar Roupas Samsung WW80T554DAW', 'Máquina de lavar roupas com capacidade de 8 kg', 3999.90);
 
-insert into usuario (id_user, senha) values ('usuario@exemple','senha_exemplo');
+insert into usuario (id_user, senha) values ('usuario@exemple.com','123456');
 

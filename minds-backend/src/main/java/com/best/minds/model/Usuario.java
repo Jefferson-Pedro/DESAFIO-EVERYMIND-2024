@@ -14,6 +14,9 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_user")
+	private Integer idUser;
+
+	@Column(name = "login")
 	private String login;
 	
 	@Column(name = "senha")
@@ -21,6 +24,14 @@ public class Usuario {
 	
 	
 	//GET E SET
+
+	public Integer getIdUser(){
+		return idUser;
+	}
+
+	public void setIdUser(Integer idUser){
+		this.idUser = idUser;
+	}
 
 	public String getLogin() {
 		return login;
