@@ -1,11 +1,11 @@
-<mat-sidenav-container style="position: relative" >
+<mat-sidenav-container style="position: relative">
     <mat-sidenav
       class="sidenav"
       mode="side"
       [opened]="navService.isMenuOpen()" 
       fixedInViewport="false"
       fixedTopGap="58"
-      appShowHide
+      appShowHide  
     >
       <mat-nav-list class="nav-list">
         <a mat-list-item routerLink="produtos/lista-de-produtos">
@@ -25,7 +25,7 @@
     </mat-sidenav>
     <div class="main-container">
       <div class="main-content">
-        <router-outlet></router-outlet>
+        <ng-content></ng-content>
       </div>
       <app-footer appShowHide></app-footer>
     </div>

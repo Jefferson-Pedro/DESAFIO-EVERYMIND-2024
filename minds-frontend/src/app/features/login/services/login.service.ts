@@ -1,43 +1,35 @@
+import { HttpBackend, HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/core/models/User';
 import { NotificationService } from 'src/app/shared/service/notification';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private userAuth!: boolean
+  private isLogger!: boolean
   private router = inject(Router);
+  private http = inject(HttpClient)
   private notification = inject(NotificationService);
 
   showComponents = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {}
 
+  public login(user: User): Observable<User> {
+    const url = `${environment.baseUrl}/usuario/`;
 
-  public login(user: User): void{
-    if(user.login === 'usuario@email.com' &&
-    user.senha === '123456'){
-      this.userAuth = true;
-      this.router.navigate(['produtos/lista-de-produtos']);
-      this.notification.showMessageSucess(
-        'Seja bem vindo!'
-      );
+    return this.http.post<User>(url, user);
+}
 
-    }else{
-      this.notification.showMessageFail(
-        'Usuário e/ou senha invalidos!'
-      );
-      this.showComponents.emit(false);
-      this.userAuth = false;
-    }
+  public createUser(user: User): Observable<User>{
+    const url = `${environment.baseUrl}/usuario/new`;
+
+    return this.http.post<User>(url, user);
   }
 
-  public registerNewUser(){}
-
-  public getUserAuth(): boolean{
-    return this.userAuth;
-  }
 }

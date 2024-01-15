@@ -5,6 +5,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormProductComponent } from '../form-product/form-product.component';
 import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/shared/service/notification';
+import { PageEvent } from '@angular/material/paginator';
+import { PaginatorConfig } from 'src/app/core/models/PaginatorConfig';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-list-product',
@@ -17,7 +20,9 @@ export class ListProductComponent {
   private prodService = inject(ProductService);
   protected notificationService = inject(NotificationService);
   private dialog = inject(MatDialog);
-  private router = inject(Router);
+  protected pageEvent: PageEvent | undefined;
+  paginator: PaginatorConfig | undefined;
+
 
   displayedColumns: string[] = ['codProd', 'nomeProd', 'descricaoProd', 'precoProd', 'actions'];
 
@@ -32,10 +37,22 @@ export class ListProductComponent {
   disabled = false;
 
   public constructor(){
-    this.onListProduct(); 
+    //this.onListProduct(); 
+    this.onpageList();
   }
 
-  public onListProduct(){
+  handlePageEvent(e: PageEvent) {
+    console.log('evento', e);
+    this.pageEvent = e;
+    this.length = e.length;
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
+
+    this.onpageList();
+  }
+
+  /*public onListProduct(){
+
     this.prodService.list().subscribe({
       next:(res) => {
         console.log(res);
@@ -45,8 +62,26 @@ export class ListProductComponent {
         console.log(err);
       },
     });
-  }
+  }*/
   
+  protected onpageList(){
+    this.prodService.getPageList(this.pageIndex, this.pageSize).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.product = res.content;
+        this.paginator = res;
+        this.length = this.paginator!.totalElements;
+      },
+      error: (err) => {
+        this.notificationService.showMessageFail(
+          'Erro ao carregar a lista de produtos!'
+        );
+        console.log(err);
+        return of([]);
+      },
+    });
+  }
+
   protected onCreateProduct(){
     const dialogRef = this.dialog.open(FormProductComponent);
   }

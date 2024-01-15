@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, delay, first } from 'rxjs';
 import { Product } from 'src/app/core/models/Product';
 import { environment } from 'src/environments/environment.development';
 
@@ -21,7 +21,23 @@ export class ProductService {
   public list(): Observable<Product[]>{
     const url = `${this.baseUrl}/produto/all`;
 
-    return this.http.get<Product[]>(url);
+    return this.http.get<Product[]>(url).pipe(
+      first(),
+      delay(20000)
+    );
+  }
+
+  public getPageList(page?: number, size?: number): Observable<any>{
+    if (page == 0 && size == 0) {
+      (page = 0), (size = 5);
+    }
+
+    const url = `${environment.baseUrl}/produto?page=${page}&size=${size}`;
+
+    return this.http.get<Product>(url).pipe(
+      first(),
+      delay(20000)
+    );;
   }
 
   public create(product: Product): Observable<Product>{

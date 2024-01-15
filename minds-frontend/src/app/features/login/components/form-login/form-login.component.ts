@@ -18,6 +18,7 @@ export class FormLoginComponent {
   private fb = inject(NonNullableFormBuilder);
   private router = inject(Router);
   protected loginService = inject(LoginService);
+  protected notification = inject(NotificationService);
   protected formLogin = this.buildForm();
 
 
@@ -41,9 +42,18 @@ export class FormLoginComponent {
   public onSubmit() {
     this.user = this.createUserPayLoad();
     console.log(this.user);
-    this.loginService.login(this.user);
-
+    this.loginService.login(this.user).subscribe({
+      next: (res) => {
+            console.log('Usuário existe');
+            // this.isLogger = true;
+            this.router.navigate(['produtos/lista-de-produtos']);
+            this.notification.showMessageSucess('Seja bem vindo!');
+      },
+      error: (err) => {
+        console.log('Ocorreu um erro ao realizar o login', err);
+        this.notification.showMessageFail(
+          'Usuário e/ou senha invalidos!')
+      }
+    });
   }
-
-  public login(user: User) {}
 }

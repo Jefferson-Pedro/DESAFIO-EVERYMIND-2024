@@ -5,6 +5,8 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +30,7 @@ public class ProdutoController {
 	@Autowired
 	IProdutoService service;
 	
-	/*@GetMapping()
+	@GetMapping()
 	public ResponseEntity<Page<Produto>> findAllPage(Pageable pageable){
 	    Page<Produto> page = service.findAllPage(pageable);
 	    
@@ -36,7 +38,7 @@ public class ProdutoController {
 	        return ResponseEntity.ok(page);
 	    }
 	    return ResponseEntity.notFound().build();
-	}*/
+	}
 	
 	@GetMapping("/all")
 	public ResponseEntity<List<Produto>> findAll(){

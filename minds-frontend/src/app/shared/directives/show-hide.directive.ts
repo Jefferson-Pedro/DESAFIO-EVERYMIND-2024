@@ -24,13 +24,16 @@ export class ShowHideDirective {
 
   private setShowHeaderFooter(): void {
     this.router.events.pipe(filter(event => event instanceof ResolveEnd)).subscribe((e) => {
+      console.log('Parametro e:', e);
       if (e instanceof ResolveEnd) {
         this.shouldShowHeaderAndFooter = !e.urlAfterRedirects.includes('http://localhost:4200/auth/entrar');
-        this.renderer.addClass(this.el.nativeElement, 'hidden');
+        this.el.nativeElement.style.display = this.shouldShowHeaderAndFooter ? 'none' : 'block';
         console.log('Retorno da Diretiva:', this.shouldShowHeaderAndFooter);
-      }else{
-        this.renderer.removeClass(this.el.nativeElement, 'hidden');
+      } else {
+        this.el.nativeElement.style.display = 'block';
       }
     });
-  } 
+  }
+  
+
 }

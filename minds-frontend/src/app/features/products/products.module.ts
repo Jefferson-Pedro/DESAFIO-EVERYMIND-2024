@@ -9,9 +9,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
-
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import { FormProductComponent } from './components/form-product/form-product.component';
@@ -44,6 +43,8 @@ import { ProductRoutingModule } from './product-routing.module';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule
     
   ],
   exports: [
