@@ -44,7 +44,7 @@ export class FormLoginComponent {
     console.log(this.user);
     this.loginService.login(this.user).subscribe({
       next: (res) => {
-            console.log('Usuário existe');
+            console.log('Usuário existe', res);
             // this.isLogger = true;
             this.router.navigate(['produtos/lista-de-produtos']);
             this.notification.showMessageSucess('Seja bem vindo!');

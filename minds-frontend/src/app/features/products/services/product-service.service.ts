@@ -23,7 +23,7 @@ export class ProductService {
 
     return this.http.get<Product[]>(url).pipe(
       first(),
-      delay(20000)
+      delay(5000) 
     );
   }
 
@@ -34,9 +34,9 @@ export class ProductService {
 
     const url = `${environment.baseUrl}/produto?page=${page}&size=${size}`;
 
-    return this.http.get<Product>(url).pipe(
+    return this.http.get<Product[]>(url).pipe(
       first(),
-      delay(20000)
+      //delay(1000)
     );;
   }
 

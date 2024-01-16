@@ -26,14 +26,11 @@ export class ShowHideDirective {
     this.router.events.pipe(filter(event => event instanceof ResolveEnd)).subscribe((e) => {
       console.log('Parametro e:', e);
       if (e instanceof ResolveEnd) {
-        this.shouldShowHeaderAndFooter = !e.urlAfterRedirects.includes('http://localhost:4200/auth/entrar');
-        this.el.nativeElement.style.display = this.shouldShowHeaderAndFooter ? 'none' : 'block';
+        // Invertendo a lógica para esconder quando "/auth/entrar" está presente
+        this.shouldShowHeaderAndFooter = !e.urlAfterRedirects.includes('/auth/entrar');
+        this.el.nativeElement.style.display = this.shouldShowHeaderAndFooter ? 'block' : 'none';
         console.log('Retorno da Diretiva:', this.shouldShowHeaderAndFooter);
-      } else {
-        this.el.nativeElement.style.display = 'block';
       }
     });
   }
-  
-
 }

@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/shared/service/notification';
 import { PageEvent } from '@angular/material/paginator';
 import { PaginatorConfig } from 'src/app/core/models/PaginatorConfig';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-list-product',
@@ -16,13 +17,12 @@ import { of } from 'rxjs';
 })
 export class ListProductComponent {
 
-  protected product: Product[] = [];
+  protected product$!: Observable<Product[]>;
   private prodService = inject(ProductService);
   protected notificationService = inject(NotificationService);
   private dialog = inject(MatDialog);
   protected pageEvent: PageEvent | undefined;
   paginator: PaginatorConfig | undefined;
-
 
   displayedColumns: string[] = ['codProd', 'nomeProd', 'descricaoProd', 'precoProd', 'actions'];
 
@@ -37,7 +37,6 @@ export class ListProductComponent {
   disabled = false;
 
   public constructor(){
-    //this.onListProduct(); 
     this.onpageList();
   }
 
@@ -68,7 +67,7 @@ export class ListProductComponent {
     this.prodService.getPageList(this.pageIndex, this.pageSize).subscribe({
       next: (res) => {
         console.log(res);
-        this.product = res.content;
+        this.product$ = of(res.content);
         this.paginator = res;
         this.length = this.paginator!.totalElements;
       },
