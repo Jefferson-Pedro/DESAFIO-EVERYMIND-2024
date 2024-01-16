@@ -40,7 +40,17 @@
 </tr>
 </table>
 
-<h6>** Visando facilitar a demostração da aplicação, recomendo utilizar apenas o Eclipse ou VsCode e rodar o projeto através da IDE **</h6>
+<h6>**  **</h6>
+
+<h4><strong>Algumas considerações antes de você executar este projeto:</strong></h4>
+<ol> 
+<p> <li>Visando facilitar a demostração da aplicação, recomendo utilizar apenas o Eclipse ou VsCode e rodar o projeto através da IDE</li></p>
+<p> <li>Este projeto foi construido utilizando SpringBoot 3.2.1</li></p>
+<p> <li>Este projeto foi construido utilizando o H2, um banco de dados em memória. Para utiliza-lo, basta ter as ferramentas acima instaladas e realizar corretamente o import do projeto.</li></p>
+<p> <li>Este projeto conta com um arquivo de inserção de dados para testes, chamado import.sql. De lá saem os dados utilizados como base para esta aplicação. ele se encontra na dentro da pasta Main > Resources.</li></p>
+<p> <li>Para garantir que a aplicação rode em perfeito estado, utilize as versões citadas acima dos programas e das linguagens.</li></p>
+</ol> 
+
 
 No Terminal/Console:
 <ol>
@@ -55,9 +65,9 @@ No Terminal/Console:
 	<img align="center" alt="Java" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
  	<img align="center" alt="Java" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"/>  
         <img align="center" alt="Java" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"/>
-           
-
 </h3>
+
+
 
 <h3>Autor</h3>
 <a href="https://www.linkedin.com/in/jefferson-pedro-8a6264b9/">
