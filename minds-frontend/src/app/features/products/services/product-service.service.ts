@@ -23,7 +23,7 @@ export class ProductService {
 
     return this.http.get<Product[]>(url).pipe(
       first(),
-      delay(5000) 
+      delay(2000) 
     );
   }
 
@@ -36,7 +36,7 @@ export class ProductService {
 
     return this.http.get<Product[]>(url).pipe(
       first(),
-      //delay(1000)
+      delay(1000)
     );;
   }
 

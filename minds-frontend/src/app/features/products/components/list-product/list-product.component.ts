@@ -17,12 +17,13 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ListProductComponent {
 
-  protected product$!: Observable<Product[]>;
+  protected product!: Observable<Product[]>;
   private prodService = inject(ProductService);
   protected notificationService = inject(NotificationService);
   private dialog = inject(MatDialog);
   protected pageEvent: PageEvent | undefined;
   paginator: PaginatorConfig | undefined;
+  protected isLoading: boolean = true;  // Variável de controle para o spinner
 
   displayedColumns: string[] = ['codProd', 'nomeProd', 'descricaoProd', 'precoProd', 'actions'];
 
@@ -37,7 +38,7 @@ export class ListProductComponent {
   disabled = false;
 
   public constructor(){
-    this.onpageList();
+    this.onPageList();
   }
 
   handlePageEvent(e: PageEvent) {
@@ -47,7 +48,7 @@ export class ListProductComponent {
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
 
-    this.onpageList();
+    this.onPageList();
   }
 
   /*public onListProduct(){
@@ -63,19 +64,21 @@ export class ListProductComponent {
     });
   }*/
   
-  protected onpageList(){
+  protected onPageList(){
     this.prodService.getPageList(this.pageIndex, this.pageSize).subscribe({
       next: (res) => {
         console.log(res);
-        this.product$ = of(res.content);
+        this.product = res.content;
         this.paginator = res;
         this.length = this.paginator!.totalElements;
+        this.isLoading = false;
       },
       error: (err) => {
         this.notificationService.showMessageFail(
           'Erro ao carregar a lista de produtos!'
         );
         console.log(err);
+        this.isLoading = false;
         return of([]);
       },
     });

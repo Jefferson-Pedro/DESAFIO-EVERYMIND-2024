@@ -88,9 +88,9 @@ export class FormProductComponent {
         this.notificationService.showMessageSucess(
           'Produto atualizado com sucesso!'
         );
-        // setTimeout(() => {
-        //   window.location.reload(); // Recarregue a página após 2 segundos
-        // }, 2000);
+        setTimeout(() => {
+          window.location.reload(); // Recarregue a página após 2 segundos
+        }, 2000);
       },
       error: () => {
         this.notificationService.showMessageFail(

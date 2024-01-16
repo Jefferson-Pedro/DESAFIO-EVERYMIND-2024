@@ -1,7 +1,7 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, delay } from 'rxjs';
 import { User } from 'src/app/core/models/User';
 import { NotificationService } from 'src/app/shared/service/notification';
 import { environment } from 'src/environments/environment.development';

@@ -27,7 +27,7 @@ export class ShowHideDirective {
       console.log('Parametro e:', e);
       if (e instanceof ResolveEnd) {
         // Invertendo a lógica para esconder quando "/auth/entrar" está presente
-        this.shouldShowHeaderAndFooter = !e.urlAfterRedirects.includes('/auth/entrar');
+        this.shouldShowHeaderAndFooter = !(e.urlAfterRedirects.includes('/auth/entrar') || e.urlAfterRedirects.includes('/auth/cadastro-usuario'));
         this.el.nativeElement.style.display = this.shouldShowHeaderAndFooter ? 'block' : 'none';
         console.log('Retorno da Diretiva:', this.shouldShowHeaderAndFooter);
       }

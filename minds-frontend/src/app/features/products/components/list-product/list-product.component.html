@@ -12,7 +12,7 @@
         </mat-toolbar>
       </div>
   
-      <div *ngIf="product$ | async as product; else loading" class="mat-elevation-z8"> 
+      <div *ngIf="product; else loading" class="mat-elevation-z8"> 
         <mat-table [dataSource]="product">
 
           <!--Id Column -->
